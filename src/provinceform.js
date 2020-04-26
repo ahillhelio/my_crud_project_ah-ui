@@ -16,7 +16,7 @@ class ProvinceForm extends React.Component {
         event.preventDefault();
 
         
-        const visited= this.state.visited == "true";
+        const visited= this.state.visited === "true";
         
 
         fetch(('http://localhost:5500/api/tc_provinces/'), {
