@@ -21,14 +21,14 @@ class Province extends Component {
     }
 
     getProvince = () => {
-            fetch('http://localhost:5500/api/tc_provinces/') //accesses API/database
+            fetch(`${process.env.REACT_APP_API_URL}/api/tc_provinces/`) //accesses API/database
             .then(response => response.json())
             .then(data => this.setState( {province : data, isCreate: true } ));//further instructions about what to do with it
         
     };
 
     deleteProvince = (id) => {
-            fetch(`http://localhost:5500/api/tc_provinces/${id}`, {
+            fetch(`${process.env.REACT_APP_API_URL}/api/tc_provinces/${id}`, {
                 method: 'DELETE'
             }) 
             .then(response => response.json())
